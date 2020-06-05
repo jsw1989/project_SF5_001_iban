@@ -5,24 +5,33 @@ namespace App\Controller;
 use App\Service\APICaller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;
 use Symfony\Component\Routing\Annotation\Route;
 
 
 class DefaultController extends AbstractController
 {
-    public $urls = [
-        'wallets' => 'https://sandbox2.ibanfirst.com/api/wallets/',
-        'movements' => 'https://sandbox2.ibanfirst.com/api/financialMovements/',
-        'currency' => 'https://api.exchangeratesapi.io/latest'
-    ];
+    /**
+     * @var
+     */
+    public $urls;
 
+    /**
+     * DefaultController constructor.
+     */
+    public function __construct(ParameterBagInterface $params)
+    {
+        $this->urls['wallets'] = $params->get('API_URL_WALLETS');
+        $this->urls['movements'] = $params->get('API_URL_MOVEMENTS');
+        $this->urls['currencies'] = $params->get('API_URL_CURRENCIES');
+    }
     /**
      * @Route("/", name="default")
      */
     public function index(APICaller $apicaller)
     {
         // lauch api caller for currency rate url
-        $jsonCurrencies = $apicaller->launchCall($this->urls['currency']);
+        $jsonCurrencies = $apicaller->launchCall($this->urls['currencies']);
         // launch call for API via APICaller Service with url of wallets
         $jsonWallets = $apicaller->launchCall($this->urls['wallets']);
         $totalWallets = count($jsonWallets['wallets']);

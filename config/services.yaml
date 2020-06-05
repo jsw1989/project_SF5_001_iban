@@ -4,7 +4,11 @@
 # Put parameters here that don't need to change on each machine where the app is deployed
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
-
+    API_USERNAME: '%env(resolve:API_USERNAME)%'
+    API_PASSWORD: '%env(resolve:API_PASSWORD)%'
+    API_URL_WALLETS: '%env(resolve:API_URL_WALLETS)%'
+    API_URL_MOVEMENTS: '%env(resolve:API_URL_MOVEMENTS)%'
+    API_URL_CURRENCIES: '%env(resolve:API_URL_CURRENCIES)%'
 services:
     # default configuration for services in *this* file
     _defaults:

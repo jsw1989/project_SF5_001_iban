@@ -1,18 +1,23 @@
 <?php
 
 namespace App\Service;
+use Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;
 
 class APICaller
 {
     /**
      * @var
      */
-    public $username = 'a00720d';
-    /**
-     * @var
-     */
-    public $password = '6KPPczga4H6pR+ZeMj+iQ5UpB0foUoO3hQWOjUiYkESU3HGLfXwce8He7TfwY/k4c3hAcFViIFfKUC+GwcbYsQ==';
+    public $params;
 
+    /**
+     * APICaller constructor.
+     * @param ParameterBagInterface $params
+     */
+    public function __construct(ParameterBagInterface $params)
+    {
+        $this->params = $params;
+    }
     /**
      * @param $url
      * @return mixed
@@ -44,6 +49,8 @@ class APICaller
      */
     public function prepareWsseHeader()
     {
+        $username = $this->params->get('API_USERNAME');
+        $password = $this->params->get('API_PASSWORD');
         $nonce = "";                    // The nonce
         $nonce64 = "";                    // The nonce with a Base64 encoding
         $date = "";                    // The date of the request, in  ISO 8601 format
@@ -60,9 +67,9 @@ class APICaller
         $date = gmdate('c');
         $date = substr($date, 0, 19) . "Z";
         // Getting the password digest
-        $digest = base64_encode(sha1($nonce . $date . $this->password, true));
+        $digest = base64_encode(sha1($nonce . $date . $password, true));
         // Getting the X-WSSE header to put in your request
-        $header = sprintf('X-WSSE: UsernameToken Username="%s", PasswordDigest="%s", Nonce="%s", Created="%s"', $this->username, $digest, $nonce64, $date);
+        $header = sprintf('X-WSSE: UsernameToken Username="%s", PasswordDigest="%s", Nonce="%s", Created="%s"', $username, $digest, $nonce64, $date);
         $wsseHeader[] = $header;
         $wsseHeader[] = 'Content-Type: application/json';
         return $wsseHeader;
