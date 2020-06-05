@@ -1,0 +1,9 @@
+dashboard_index:
+    path: /
+    controller: App\Controller\DefaultController::index
+wallets_index:
+    path: /wallets/
+    controller: App\Controller\DefaultController::walletIndex
+movements_index:
+    path: /movements/{wallet_id}
+    controller: App\Controller\DefaultController::movementIndex

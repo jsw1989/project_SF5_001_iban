@@ -1,0 +1,378 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block body %}
+
+    <div id="app">
+        <div class="MuiGrid-root mainContainerArea">
+            {% include('default/sidebar.html.twig') ignore missing %}
+            <div class="MuiGrid-root mainContainer">
+                <div class="MuiGrid-root mainContentRouter">
+                    <ul class="breadCumbWrap">
+                        <li>Dashboard</li>
+                    </ul>
+                    <div class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-4">
+                        <div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiGrid-grid-lg-4">
+                            <div class="MuiGrid-root featuredItem"
+                                 style="background: linear-gradient(240.95deg, rgb(123, 234, 254) 0%, rgb(28, 140, 250) 100%);">
+                                <div class="featuredContent"><span>Total Transactions Amount</span>
+                                    <h3>{{ totalTransactionsAmount }} €</h3></div>
+                                <div class="featuredIcon"><img
+                                            src="data:image/svg+xml,%3Csvg width='94' height='91' viewBox='0 0 94 91' fill='none' xmlns='http://www.w3.org/2000/svg'%3E %3Cg clip-path='url(%23clip0)'%3E %3Cpath d='M62.7806 58.3599C60.5534 58.3599 58.7415 56.8417 58.7415 54.9757C58.7415 53.1095 60.5534 51.5913 62.7806 51.5913C65.0077 51.5913 66.8196 53.1095 66.8196 54.9757C66.8196 55.9571 67.6417 56.753 68.6555 56.753C69.6693 56.753 70.4915 55.9571 70.4915 54.9757C70.4915 51.7187 67.9847 48.9802 64.6165 48.2369V47.3125C64.6165 46.331 63.7944 45.5352 62.7806 45.5352C61.7668 45.5352 60.9446 46.331 60.9446 47.3125V48.2369C57.5764 48.9802 55.0696 51.7187 55.0696 54.9757C55.0696 58.8018 58.5287 61.9146 62.7806 61.9146C65.0077 61.9146 66.8196 63.4328 66.8196 65.299C66.8196 67.1652 65.0077 68.6834 62.7806 68.6834C60.5534 68.6834 58.7415 67.1652 58.7415 65.299C58.7415 64.3176 57.9194 63.5217 56.9056 63.5217C55.8918 63.5217 55.0696 64.3176 55.0696 65.299C55.0696 68.556 57.5764 71.2945 60.9446 72.0378V72.8056C60.9446 73.787 61.7668 74.5829 62.7806 74.5829C63.7944 74.5829 64.6165 73.787 64.6165 72.8056V72.0378C67.9847 71.2945 70.4915 68.556 70.4915 65.299C70.4915 61.4727 67.0324 58.3599 62.7806 58.3599Z' fill='%23ABECFF'/%3E %3Cpath d='M82.8892 47.7877C80.4909 44.1699 77.112 41.275 73.118 39.4162C72.2038 38.9907 71.1069 39.3633 70.6677 40.248C70.2284 41.1328 70.613 42.1946 71.5269 42.6199C78.4871 45.8589 82.9843 52.7797 82.9843 60.2513C82.9843 63.4484 82.1702 66.619 80.6304 69.4208C80.1542 70.2872 80.4936 71.3636 81.3888 71.8246C81.6635 71.9661 81.9587 72.0333 82.2495 72.0333C82.9064 72.0333 83.5418 71.691 83.8719 71.0904C85.6934 67.7767 86.6561 64.0285 86.6561 60.2513C86.6561 55.815 85.3535 51.5052 82.8892 47.7877Z' fill='%23ABECFF'/%3E %3Cpath d='M65.6665 37.1467L65.5429 37.1465C64.5291 37.1465 63.707 37.9422 63.707 38.9238C63.707 39.9054 64.5291 40.7012 65.5429 40.7012L65.6492 40.7013C65.6521 40.7013 65.6549 40.7013 65.658 40.7013C66.668 40.7013 67.489 39.9111 67.4938 38.9324C67.4984 37.9507 66.6803 37.1513 65.6665 37.1467Z' fill='%23ABECFF'/%3E %3Cpath d='M54.0512 77.884C47.0912 74.6448 42.5941 67.7241 42.5941 60.2527C42.5941 57.0556 43.4081 53.885 44.9479 51.0832C45.4242 50.2167 45.0847 49.1404 44.1895 48.6793C43.2947 48.2183 42.1825 48.5469 41.7064 49.4135C39.885 52.7274 38.9222 56.4755 38.9222 60.2527C38.9222 64.6889 40.2248 68.9986 42.6892 72.7163C45.0875 76.334 48.4663 79.229 52.4604 81.0879C52.7169 81.2073 52.9879 81.2637 53.2546 81.2637C53.9383 81.2637 54.5945 80.8924 54.9106 80.2561C55.3496 79.3713 54.9652 78.3094 54.0512 77.884Z' fill='%23ABECFF'/%3E %3Cpath d='M60.0355 79.8031L59.9292 79.8027C58.9106 79.801 58.0896 80.5899 58.085 81.5717C58.0802 82.5534 58.8987 83.3528 59.9125 83.3574L60.0355 83.3578C61.0493 83.3578 61.8714 82.5619 61.8714 81.5804C61.8714 80.599 61.0493 79.8031 60.0355 79.8031Z' fill='%23ABECFF'/%3E %3Cpath d='M71.1258 34.117C70.9024 33.6275 70.6286 33.1662 70.3101 32.7383H75.0898C79.7464 32.7383 83.5351 29.255 83.5351 24.9737C83.5351 20.6923 79.7464 17.209 75.0898 17.209H60.3876C61.3223 15.9596 61.871 14.448 61.871 12.8203C61.871 8.53895 58.0824 5.05566 53.4257 5.05566H8.44536C3.78869 5.05566 6.10352e-05 8.53895 6.10352e-05 12.8203C6.10352e-05 17.1017 3.78869 20.5849 8.44536 20.5849H23.1475C22.2128 21.8344 21.6641 23.346 21.6641 24.9737C21.6641 26.6014 22.2127 28.1129 23.1475 29.3624H18.3594C13.7027 29.3624 9.91411 32.8457 9.91411 37.127C9.91411 39.5859 11.1651 41.7801 13.1114 43.2037C11.1651 44.6273 9.91411 46.8215 9.91411 49.2804C9.91411 51.7392 11.1651 53.9334 13.1114 55.357C11.1651 56.7807 9.91411 58.9749 9.91411 61.4337C9.91411 63.8926 11.1651 66.0868 13.1114 67.5104C11.1651 68.934 9.91411 71.1282 9.91411 73.5871C9.91411 77.8684 13.7027 81.3517 18.3594 81.3517H39.9959C45.6957 86.9569 53.8043 90.4669 62.7892 90.4669C79.9989 90.4669 94.0001 77.5941 94.0001 61.7715C94.0001 48.6025 84.3008 37.4786 71.1258 34.117ZM75.0898 20.5849C77.7219 20.5849 79.8632 22.5538 79.8632 24.9737C79.8632 27.3935 77.7219 29.3624 75.0898 29.3624H63.3398H30.1094C27.4772 29.3624 25.336 27.3935 25.336 24.9737C25.336 22.5538 27.4772 20.5849 30.1094 20.5849H75.0898ZM8.44536 17.209C5.81318 17.209 3.67193 15.2402 3.67193 12.8203C3.67193 10.4004 5.81318 8.4316 8.44536 8.4316H53.4257C56.0579 8.4316 58.1992 10.4004 58.1992 12.8203C58.1992 15.2402 56.0579 17.209 53.4257 17.209H8.44536ZM18.3594 32.7383H63.3398C64.0793 32.7383 64.7874 32.8963 65.4227 33.1792C64.5543 33.1122 63.6763 33.0761 62.7892 33.0761C54.1704 33.0761 46.3567 36.305 40.7031 41.5157H18.3594C15.7274 41.5157 13.586 39.5469 13.586 37.127C13.586 34.7071 15.7274 32.7383 18.3594 32.7383ZM18.3594 44.8917H37.566C35.4819 47.517 33.8705 50.478 32.8471 53.6691H18.3594C15.7272 53.6691 13.586 51.7004 13.586 49.2804C13.586 46.8605 15.7272 44.8917 18.3594 44.8917ZM18.3594 57.045H32.0041C31.7256 58.5833 31.5783 60.1617 31.5783 61.7715C31.5783 63.1465 31.6864 64.4986 31.8908 65.8224H18.3594C15.7272 65.8224 13.586 63.8538 13.586 61.4337C13.586 59.0137 15.7272 57.045 18.3594 57.045ZM18.3594 77.9758C15.7272 77.9758 13.586 76.0071 13.586 73.5871C13.586 71.167 15.7272 69.1984 18.3594 69.1984H32.6404C33.5668 72.3739 35.0717 75.3335 37.0454 77.9758H18.3594ZM62.7892 87.091C47.6042 87.091 35.2502 75.7327 35.2502 61.7715C35.2502 47.8103 47.6042 36.452 62.7892 36.452C77.9742 36.452 90.3282 47.8103 90.3282 61.7715C90.3282 75.7327 77.9742 87.091 62.7892 87.091Z' fill='%23ABECFF'/%3E %3C/g%3E %3Cdefs%3E %3CclipPath id='clip0'%3E %3Crect width='94' height='91' fill='white'/%3E %3C/clipPath%3E %3C/defs%3E %3C/svg%3E"
+                                            alt=""></div>
+                               <a class="viewBtn" href="{{ path('movements_index',{'wallet_id':'full'}) }}">View</a> </div>
+                        </div>
+                        <div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiGrid-grid-lg-4">
+                            <div class="MuiGrid-root featuredItem"
+                                 style="background: linear-gradient(60.95deg, rgb(58, 223, 158) 0%, rgb(179, 251, 91) 100%);">
+                                <div class="featuredContent"><span>Total Booking Amount </span>
+                                    <h3>{{ totalBookingAmount }} €
+{#                                        <span class="percentValue">50%</span>#}
+                                    </h3></div>
+                                <div class="featuredIcon"><img
+                                            src="data:image/svg+xml,%3Csvg width='108' height='98' viewBox='0 0 108 98' fill='none' xmlns='http://www.w3.org/2000/svg'%3E %3Cpath d='M82.5633 41.2968C82.5609 41.2768 82.5594 41.2565 82.5565 41.2367C82.5423 41.138 82.5235 41.0395 82.4969 40.9423C82.4966 40.9413 82.4961 40.9403 82.4959 40.9391C82.471 40.8482 82.4392 40.7585 82.4033 40.6698C82.393 40.6444 82.3818 40.62 82.3708 40.5951C82.3425 40.5311 82.3109 40.468 82.2767 40.406C82.2618 40.3788 82.2474 40.3517 82.2313 40.3251C82.2227 40.3107 82.2159 40.2958 82.2068 40.2813C82.1707 40.2239 82.1311 40.1699 82.091 40.1164C82.0835 40.1064 82.0774 40.0959 82.0698 40.0861C82.0087 40.0069 81.9427 39.9334 81.8736 39.8638C81.8606 39.8506 81.8464 39.8384 81.833 39.8256C81.7729 39.7677 81.7106 39.7135 81.6456 39.6624C81.629 39.6495 81.6129 39.6365 81.5957 39.6241C81.5088 39.5596 81.4191 39.4994 81.3255 39.4474L45.3278 18.9855L66.0541 5.93416L100.801 25.6848L86.1674 34.8997C85.0253 35.6186 84.6825 37.1274 85.4016 38.2692C86.1205 39.4112 87.6291 39.7541 88.7711 39.035L106.859 27.6454C107.586 27.1878 108.019 26.3817 108 25.5226C107.98 24.6635 107.511 23.8782 106.764 23.4535L67.1972 0.96277C66.4145 0.517578 65.4501 0.539569 64.6878 1.01921L39.2869 17.0141C39.2818 17.0173 39.2764 17.0207 39.2713 17.0239L26.5784 25.0166C26.5726 25.0202 26.5667 25.0239 26.5611 25.0275L1.14289 41.0334C0.415725 41.4911 -0.0174938 42.2972 0.00205362 43.1563C0.0213567 44.0154 0.490249 44.8007 1.23745 45.2254L40.8048 67.7161C41.1796 67.9294 41.596 68.0355 42.0121 68.0355C42.4648 68.0355 42.9169 67.9096 43.3139 67.6596L61.4016 56.2699C62.5437 55.551 62.8865 54.0422 62.1674 52.9004C61.4488 51.7583 59.9397 51.4153 58.7979 52.1346L41.9478 62.7449L7.20062 42.9938L27.9272 29.9422L64.9866 51.0075V78.907C64.9866 79.7969 65.4701 80.6161 66.2491 81.0462C66.6173 81.2495 67.0239 81.3504 67.43 81.3504C67.883 81.3504 68.3351 81.2246 68.7319 80.9746L81.4411 72.9717C82.1516 72.5243 82.5826 71.7436 82.5826 70.904V41.583C82.5826 41.5685 82.5802 41.5549 82.5797 41.5404C82.5782 41.4593 82.5729 41.3782 82.5633 41.2968ZM69.8734 74.4812V49.5861C69.8734 48.7072 69.4014 47.8963 68.6373 47.4621L32.6186 26.9884L40.6362 21.9396L75.3831 41.6905L72.3408 43.6061C71.1987 44.325 70.8559 45.8338 71.575 46.9756C72.0393 47.7135 72.8332 48.1174 73.6451 48.1174C74.0898 48.1174 74.5404 47.996 74.9445 47.7414L77.6956 46.0092V69.5555L69.8734 74.4812Z' fill='%23CEFFAE'/%3E %3Cpath d='M104.254 33.2834L86.1668 44.673C85.0248 45.3918 84.6819 46.9006 85.401 48.0424C85.8653 48.7804 86.6592 49.1843 87.4711 49.1843C87.9158 49.1843 88.3664 49.0628 88.7705 48.8082L106.858 37.4187C108 36.6998 108.343 35.191 107.624 34.0492C106.905 32.9072 105.396 32.5641 104.254 33.2834Z' fill='%23CEFFAE'/%3E %3Cpath d='M58.7968 61.9077L41.9467 72.518L3.65121 50.7503C2.47886 50.0837 0.986419 50.4932 0.319609 51.6671C-0.347201 52.8401 0.0630498 54.3318 1.23638 54.9987L40.8037 77.4894C41.1785 77.7027 41.5949 77.8087 42.011 77.8087C42.4637 77.8087 42.9158 77.6829 43.3128 77.4329L61.4005 66.0432C62.5426 65.3243 62.8854 63.8155 62.1663 62.6737C61.4477 61.5314 59.9386 61.1883 58.7968 61.9077Z' fill='%23CEFFAE'/%3E %3Cpath d='M104.254 43.0579L86.1668 54.4474C85.0248 55.1663 84.6819 56.6751 85.401 57.8169C85.8653 58.5548 86.6592 58.9587 87.4711 58.9587C87.9158 58.9587 88.3664 58.8373 88.7705 58.5827L106.858 47.1932C108 46.4743 108.343 44.9655 107.624 43.8237C106.905 42.6814 105.396 42.3386 104.254 43.0579Z' fill='%23CEFFAE'/%3E %3Cpath d='M58.7968 71.6811L41.9467 82.2915L3.65121 60.5237C2.47886 59.8572 0.986419 60.2667 0.319609 61.4405C-0.347201 62.6136 0.0630498 64.1053 1.23638 64.7721L40.8037 87.2628C41.1785 87.4762 41.5949 87.5822 42.011 87.5822C42.4637 87.5822 42.9158 87.4564 43.3128 87.2064L61.4005 75.8166C62.5426 75.0978 62.8854 73.589 62.1663 72.4471C61.4477 71.3046 59.9386 70.9618 58.7968 71.6811Z' fill='%23CEFFAE'/%3E %3Cpath d='M104.254 52.8312L86.1668 64.2207C85.0248 64.9396 84.6819 66.4484 85.401 67.5902C85.8653 68.3281 86.6592 68.732 87.4711 68.732C87.9158 68.732 88.3664 68.6106 88.7705 68.356L106.858 56.9664C108 56.2476 108.343 54.7388 107.624 53.597C106.905 52.4549 105.396 52.1121 104.254 52.8312Z' fill='%23CEFFAE'/%3E %3Cpath d='M58.7968 81.4555L41.9467 92.0659L3.65121 70.2981C2.47886 69.6316 0.986419 70.0411 0.319609 71.2149C-0.347201 72.388 0.0630498 73.8797 1.23638 74.5465L40.8037 97.0372C41.1785 97.2506 41.5949 97.3566 42.011 97.3566C42.4637 97.3566 42.9158 97.2308 43.3128 96.9808L61.4005 85.591C62.5426 84.8722 62.8854 83.3634 62.1663 82.2215C61.4477 81.0792 59.9386 80.7362 58.7968 81.4555Z' fill='%23CEFFAE'/%3E %3C/svg%3E"
+                                            alt=""></div>
+                                <a class="viewBtn" href="{{ path('wallets_index') }}">View</a></div>
+                        </div>
+                        <div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiGrid-grid-lg-4">
+                            <div class="MuiGrid-root featuredItem"
+                                 style="background: linear-gradient(360deg, rgba(98, 88, 251, 0.9) 0.75%, rgba(134, 126, 255, 0.9) 100%);">
+                                <div class="featuredContent"><span>Total Wallets</span>
+                                    <h3>{{ totalWallets }}</h3></div>
+                                <div class="featuredIcon"><img
+                                            src="data:image/svg+xml,%3Csvg width='101' height='101' viewBox='0 0 101 101' fill='none' xmlns='http://www.w3.org/2000/svg'%3E %3Cg clip-path='url(%23clip0)'%3E %3Cpath d='M100.797 87.9162L96.7932 73.9984C96.6979 73.7124 96.5072 73.4265 96.3166 73.2358C93.8381 65.7049 87.7371 59.89 80.0156 57.8881L78.8717 57.6975C77.1558 57.2208 75.2492 57.7928 74.01 59.2227C69.8156 63.9891 64.4773 64.3704 58.8529 64.3704C53.2286 64.3704 47.8903 63.9891 43.6959 59.2227C42.4566 57.7928 40.5501 57.2208 38.8342 57.6975L37.6903 57.9834C31.8753 59.5087 26.9183 63.2264 23.7725 68.1835H11.7613C11.6659 68.1835 11.6659 68.1834 11.5706 68.0881C11.5706 67.9928 11.4753 67.8975 11.4753 67.7068L13.9538 58.8414C16.1463 51.8825 20.3407 49.7853 28.5389 47.6881C28.9202 47.5928 29.2062 47.4021 29.3968 47.2114C30.0641 47.7834 30.8267 48.26 31.5893 48.6414C31.8753 48.832 32.1613 48.832 32.4473 48.832C33.1146 48.832 33.7819 48.4507 34.1632 47.7834C34.6398 46.8301 34.2585 45.6862 33.3052 45.2096C28.9202 42.9217 25.7744 36.4395 25.7744 29.7666C25.7744 23.8563 30.6361 18.9946 36.5464 18.9946C37.6903 18.9946 38.7389 19.1852 39.7875 19.4712C38.7389 22.045 38.1669 24.8095 38.1669 27.7647C38.1669 44.0656 47.9856 57.7928 59.6156 57.7928C71.0548 57.7928 81.1595 43.7797 81.1595 27.7647C81.1595 15.8488 71.5315 6.2207 59.6156 6.2207C52.0847 6.2207 45.4118 10.1291 41.5987 16.0394C39.9781 15.4675 38.2622 15.1815 36.5464 15.1815C31.3987 15.1815 26.823 17.946 24.2491 22.045C24.0585 21.8544 23.8678 21.7591 23.6772 21.6637C22.2473 20.9011 20.8174 20.6151 19.1968 20.6151C13.8585 20.5198 9.56873 24.8095 9.56873 30.1479C9.56873 33.1983 10.4267 36.0582 11.7613 38.346C7.3762 39.4899 3.46778 41.2058 1.65656 47.0208L0.131328 52.5498C-0.154654 53.5031 0.0360007 54.5517 0.607964 55.3143C1.17993 56.1722 2.22853 56.6489 3.27713 56.6489H10.6173C10.522 57.0302 10.3313 57.4115 10.236 57.7928L7.75751 66.7536C7.3762 67.9928 7.66218 69.3274 8.52013 70.376C9.28275 71.4246 10.4267 71.9966 11.7613 71.9966H21.866C21.58 72.6638 21.3893 73.3311 21.1987 73.9984L17.1949 88.0115C16.8136 89.6321 17.0996 91.348 18.1482 92.6826C19.1968 94.0172 20.722 94.7798 22.3426 94.7798H79.539H82.7801H95.6493C97.2698 94.7798 98.8904 94.0172 99.8437 92.6826C100.892 91.348 101.274 89.6321 100.797 87.9162ZM43.8866 19.7572C43.9819 19.6619 44.0772 19.5665 44.1725 19.3759C44.2679 19.2805 44.2679 19.0899 44.3632 18.9946C47.3183 13.6562 53.038 10.0338 59.6156 10.0338C67.5277 10.0338 74.2006 15.2768 76.4885 22.4263C73.152 23.0936 69.6249 21.7591 67.5277 18.8992C66.8604 18.0413 65.7165 17.8506 64.8586 18.5179C64.4772 18.8039 64.2866 19.0899 64.1913 19.4712C64.0959 19.5665 64.0959 19.6619 64.0006 19.7572C61.3314 25.1908 52.3707 27.4787 42.1707 25.4768C42.4566 23.4749 43.0286 21.5684 43.8866 19.7572ZM49.2249 29.9572C56.8511 29.9572 63.1427 27.574 66.3838 23.0936C68.767 25.1908 71.7221 26.3348 74.8679 26.3348C75.6305 26.3348 76.4885 26.2394 77.2511 26.0488C77.3464 26.6207 77.3464 27.0974 77.3464 27.6693C77.3464 41.6825 69.053 53.9797 59.6156 53.9797C50.5595 53.9797 42.6473 42.6357 41.98 29.2899C44.4585 29.7666 46.937 29.9572 49.2249 29.9572ZM4.03975 52.8358L5.37433 48.0694C6.51826 44.161 8.90144 43.017 13.6678 41.8731C13.9538 41.7778 14.2398 41.6825 14.4304 41.4918C14.9071 41.8731 15.2884 42.1591 15.8603 42.4451C16.1463 42.6357 16.4323 42.6357 16.7183 42.6357C17.3856 42.6357 18.0529 42.2544 18.4342 41.5871C18.9108 40.6339 18.5295 39.4899 17.6716 39.0133C15.193 37.6787 13.3818 33.961 13.3818 30.1479C13.3818 26.9067 15.9557 24.3329 19.1968 24.3329C20.2454 24.3329 21.1033 24.5235 21.9613 25.0002C22.2473 25.0955 22.4379 25.1908 22.7239 25.1908C22.2473 26.6207 21.9613 28.146 21.9613 29.7666C21.9613 35.2002 23.7725 40.5385 26.6323 44.2563C20.9127 45.6862 15.8603 47.5928 12.5239 52.8358H4.03975ZM96.8885 90.3947C96.6979 90.5854 96.3166 90.9667 95.6493 90.9667H82.7801H79.539H22.3426C21.6753 90.9667 21.294 90.5854 21.1033 90.3947C20.8174 90.0134 20.722 89.4414 20.8174 89.0601L24.8211 75.1423C26.7276 68.5648 31.9706 63.4171 38.6436 61.7012L39.7875 61.4152C40.0735 61.3199 40.5501 61.5105 40.8361 61.7965C46.0791 67.8021 52.5613 68.2788 58.8529 68.2788C65.1445 68.2788 71.6268 67.8021 76.8698 61.7965C77.1558 61.5105 77.5371 61.3199 78.0137 61.4152L79.1577 61.7012C85.7352 63.4171 91.0736 68.5648 92.9801 75.1423L94.696 81.0526C94.7913 81.3386 94.8867 81.5293 95.0773 81.7199L97.1745 88.9648C97.2698 89.4414 97.1745 90.0134 96.8885 90.3947Z' fill='%23A8A2FF'/%3E %3C/g%3E %3Cdefs%3E %3CclipPath id='clip0'%3E %3Crect width='101' height='101' fill='white'/%3E %3C/clipPath%3E %3C/defs%3E %3C/svg%3E"
+                                            alt=""></div>
+                                <a class="viewBtn" href="{{ path('wallets_index') }}">View</a></div>
+                        </div>
+                        <div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-lg-6">
+                            <div class="MuiGrid-root cardWrapper" style="position: relative;">Wallets with f.movements
+                                <div style="min-height: 295.805px;">
+                                    <div id="apexcharts2fmqe6g9k" class="apexcharts-canvas apexcharts2fmqe6g9k light"
+                                         style="width: 526px; height: 295.805px;">
+                                        <svg id="SvgjsSvg1489" width="526" height="295.8048780487805"
+                                             xmlns="http://www.w3.org/2000/svg" version="1.1"
+                                             xmlns:xlink="http://www.w3.org/1999/xlink"
+                                             xmlns:svgjs="http://svgjs.com/svgjs" class="apexcharts-svg"
+                                             xmlns:data="ApexChartsNS" transform="translate(0, 0)"
+                                             style="background: transparent;">
+                                            <g id="SvgjsG1491" class="apexcharts-inner apexcharts-graphical"
+                                               transform="translate(127.5, 0)">
+                                                <defs id="SvgjsDefs1490">
+                                                    <clipPath id="gridRectMask2fmqe6g9k">
+                                                        <rect id="SvgjsRect1492" width="275" height="297" x="-1" y="-1"
+                                                              rx="0" ry="0" fill="#ffffff" opacity="1" stroke-width="0"
+                                                              stroke="none" stroke-dasharray="0"></rect>
+                                                    </clipPath>
+                                                    <clipPath id="gridRectMarkerMask2fmqe6g9k">
+                                                        <rect id="SvgjsRect1493" width="275" height="297" x="-1" y="-1"
+                                                              rx="0" ry="0" fill="#ffffff" opacity="1" stroke-width="0"
+                                                              stroke="none" stroke-dasharray="0"></rect>
+                                                    </clipPath>
+                                                    <linearGradient id="SvgjsLinearGradient1499" x1="0" y1="1" x2="1"
+                                                                    y2="1">
+                                                        <stop id="SvgjsStop1500" stop-opacity="1"
+                                                              stop-color="rgba(94,85,230,1)" offset="0"></stop>
+                                                        <stop id="SvgjsStop1501" stop-opacity="1"
+                                                              stop-color="rgba(233,247,255,1)" offset="1"></stop>
+                                                        <stop id="SvgjsStop1502" stop-opacity="1"
+                                                              stop-color="rgba(233,247,255,1)" offset="1"></stop>
+                                                    </linearGradient>
+                                                    <filter id="SvgjsFilter1505" filterUnits="userSpaceOnUse">
+                                                        <feFlood id="SvgjsFeFlood1506" flood-color="#000000"
+                                                                 flood-opacity="0.15" result="SvgjsFeFlood1506Out"
+                                                                 in="SourceGraphic"></feFlood>
+                                                        <feComposite id="SvgjsFeComposite1507" in="SvgjsFeFlood1506Out"
+                                                                     in2="SourceAlpha" operator="in"
+                                                                     result="SvgjsFeComposite1507Out"></feComposite>
+                                                        <feOffset id="SvgjsFeOffset1508" dx="0" dy="-3"
+                                                                  result="SvgjsFeOffset1508Out"
+                                                                  in="SvgjsFeComposite1507Out"></feOffset>
+                                                        <feGaussianBlur id="SvgjsFeGaussianBlur1509" stdDeviation="4 "
+                                                                        result="SvgjsFeGaussianBlur1509Out"
+                                                                        in="SvgjsFeOffset1508Out"></feGaussianBlur>
+                                                        <feMerge id="SvgjsFeMerge1510" result="SvgjsFeMerge1510Out"
+                                                                 in="SourceGraphic">
+                                                            <feMergeNode id="SvgjsFeMergeNode1511"
+                                                                         in="SvgjsFeGaussianBlur1509Out"></feMergeNode>
+                                                            <feMergeNode id="SvgjsFeMergeNode1512"
+                                                                         in="[object Arguments]"></feMergeNode>
+                                                        </feMerge>
+                                                        <feBlend id="SvgjsFeBlend1513" in="SourceGraphic"
+                                                                 in2="SvgjsFeMerge1510Out" mode="normal"
+                                                                 result="SvgjsFeBlend1513Out"></feBlend>
+                                                    </filter>
+                                                    <filter id="SvgjsFilter1517" filterUnits="userSpaceOnUse">
+                                                        <feFlood id="SvgjsFeFlood1518" flood-color="#000000"
+                                                                 flood-opacity="0.24" result="SvgjsFeFlood1518Out"
+                                                                 in="SourceGraphic"></feFlood>
+                                                        <feComposite id="SvgjsFeComposite1519" in="SvgjsFeFlood1518Out"
+                                                                     in2="SourceAlpha" operator="in"
+                                                                     result="SvgjsFeComposite1519Out"></feComposite>
+                                                        <feOffset id="SvgjsFeOffset1520" dx="0" dy="3"
+                                                                  result="SvgjsFeOffset1520Out"
+                                                                  in="SvgjsFeComposite1519Out"></feOffset>
+                                                        <feGaussianBlur id="SvgjsFeGaussianBlur1521" stdDeviation="4 "
+                                                                        result="SvgjsFeGaussianBlur1521Out"
+                                                                        in="SvgjsFeOffset1520Out"></feGaussianBlur>
+                                                        <feMerge id="SvgjsFeMerge1522" result="SvgjsFeMerge1522Out"
+                                                                 in="SourceGraphic">
+                                                            <feMergeNode id="SvgjsFeMergeNode1523"
+                                                                         in="SvgjsFeGaussianBlur1521Out"></feMergeNode>
+                                                            <feMergeNode id="SvgjsFeMergeNode1524"
+                                                                         in="[object Arguments]"></feMergeNode>
+                                                        </feMerge>
+                                                        <feBlend id="SvgjsFeBlend1525" in="SourceGraphic"
+                                                                 in2="SvgjsFeMerge1522Out" mode="normal"
+                                                                 result="SvgjsFeBlend1525Out"></feBlend>
+                                                    </filter>
+                                                    <linearGradient id="SvgjsLinearGradient1529" x1="0" y1="1" x2="1"
+                                                                    y2="1">
+                                                        <stop id="SvgjsStop1530" stop-opacity="1"
+                                                              stop-color="rgba(94,85,230,1)" offset="0"></stop>
+                                                        <stop id="SvgjsStop1531" stop-opacity="1"
+                                                              stop-color="rgba(0,143,251,1)" offset="1"></stop>
+                                                        <stop id="SvgjsStop1532" stop-opacity="1"
+                                                              stop-color="rgba(0,143,251,1)" offset="1"></stop>
+                                                    </linearGradient>
+                                                </defs>
+                                                <g id="SvgjsG1495" class="apexcharts-radialbar">
+                                                    <g id="SvgjsG1496">
+                                                        <g id="SvgjsG1497" class="apexcharts-tracks">
+                                                            <g id="SvgjsG1498"
+                                                               class="apexcharts-radialbar-track apexcharts-track"
+                                                               rel="1">
+                                                                <path id="apexcharts-radialbarTrack-0"
+                                                                      d="M 71.89846577319413 212.10153422680585 A 91.36036585365854 91.36036585365854 0 1 1 72.01131505709914 212.2141867232341"
+                                                                      fill="none" fill-opacity="1"
+                                                                      stroke="rgba(233,247,255,0.85)" stroke-opacity="1"
+                                                                      stroke-linecap="butt"
+                                                                      stroke-width="13.962621951219514"
+                                                                      stroke-dasharray="0"
+                                                                      class="apexcharts-radialbar-area"
+                                                                      filter="url(#SvgjsFilter1505)"
+                                                                      data:pathOrig="M 71.89846577319413 212.10153422680585 A 91.36036585365854 91.36036585365854 0 1 1 72.01131505709914 212.2141867232341"></path>
+                                                            </g>
+                                                        </g>
+                                                        <g id="SvgjsG1514">
+                                                            <g id="SvgjsG1528"
+                                                               class="apexcharts-series apexcharts-radial-series"
+                                                               seriesName="seriesx1" rel="1" data:realIndex="0">
+                                                                <path id="SvgjsPath1533"
+                                                                      d="M 71.89846577319413 212.10153422680585 A 91.36036585365854 91.36036585365854 0 1 1 201.11280833755194 212.0902581481845"
+                                                                      fill="none" fill-opacity="0.85"
+                                                                      stroke="url(#SvgjsLinearGradient1529)"
+                                                                      stroke-opacity="1" stroke-linecap="butt"
+                                                                      stroke-width="31.028048780487808"
+                                                                      stroke-dasharray="0"
+                                                                      class="apexcharts-radialbar-area apexcharts-radialbar-slice-0"
+                                                                      data:angle="270" data:value="75" index="0" j="0"
+                                                                      data:pathOrig="M 71.89846577319413 212.10153422680585 A 91.36036585365854 91.36036585365854 0 1 1 201.11280833755194 212.0902581481845"></path>
+                                                            </g>
+                                                            <circle id="SvgjsCircle1515" r="84.37905487804878"
+                                                                    cx="136.5" cy="147.5"
+                                                                    class="apexcharts-radialbar-hollow" fill="#ffffff"
+                                                                    filter="url(#SvgjsFilter1517)"></circle>
+                                                            <g id="SvgjsG1526" class="apexcharts-datalabels-group"
+                                                               transform="translate(0, 0)" style="opacity: 1;">
+                                                                <text id="SvgjsText1527"
+                                                                      font-family="Helvetica, Arial, sans-serif"
+                                                                      x="136.5" y="163.5" text-anchor="middle"
+                                                                      dominant-baseline="auto" font-size="20px"
+                                                                      font-weight="regular" fill="#666666"
+                                                                      class="apexcharts-datalabel-value"
+                                                                      style="font-family: Helvetica, Arial, sans-serif;">
+                                                                    {{ withMovements }}
+                                                                </text>
+                                                            </g>
+                                                        </g>
+                                                    </g>
+                                                </g>
+                                                <line id="SvgjsLine1534" x1="0" y1="0" x2="273" y2="0" stroke="#b6b6b6"
+                                                      stroke-dasharray="0" stroke-width="1"
+                                                      class="apexcharts-ycrosshairs"></line>
+                                                <line id="SvgjsLine1535" x1="0" y1="0" x2="273" y2="0"
+                                                      stroke-dasharray="0" stroke-width="0"
+                                                      class="apexcharts-ycrosshairs-hidden"></line>
+                                            </g>
+                                        </svg>
+                                        <div class="apexcharts-legend"></div>
+                                    </div>
+                                </div>
+                                <div class="resize-triggers">
+                                    <div class="expand-trigger">
+                                        <div style="width: 617px; height: 383px;"></div>
+                                    </div>
+                                    <div class="contract-trigger"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-lg-6">
+                            <div class="MuiGrid-root cardWrapper" style="position: relative;">Wallets without f.movements
+                                <div style="min-height: 295.805px;">
+                                    <div id="apexchartsotciwfz7" class="apexcharts-canvas apexchartsotciwfz7 light"
+                                         style="width: 526px; height: 295.805px;">
+                                        <svg id="SvgjsSvg1538" width="526" height="295.8048780487805"
+                                             xmlns="http://www.w3.org/2000/svg" version="1.1"
+                                             xmlns:xlink="http://www.w3.org/1999/xlink"
+                                             xmlns:svgjs="http://svgjs.com/svgjs" class="apexcharts-svg"
+                                             xmlns:data="ApexChartsNS" transform="translate(0, 0)"
+                                             style="background: transparent;">
+                                            <g id="SvgjsG1540" class="apexcharts-inner apexcharts-graphical"
+                                               transform="translate(127.5, 0)">
+                                                <defs id="SvgjsDefs1539">
+                                                    <clipPath id="gridRectMaskotciwfz7">
+                                                        <rect id="SvgjsRect1541" width="275" height="297" x="-1" y="-1"
+                                                              rx="0" ry="0" fill="#ffffff" opacity="1" stroke-width="0"
+                                                              stroke="none" stroke-dasharray="0"></rect>
+                                                    </clipPath>
+                                                    <clipPath id="gridRectMarkerMaskotciwfz7">
+                                                        <rect id="SvgjsRect1542" width="275" height="297" x="-1" y="-1"
+                                                              rx="0" ry="0" fill="#ffffff" opacity="1" stroke-width="0"
+                                                              stroke="none" stroke-dasharray="0"></rect>
+                                                    </clipPath>
+                                                    <linearGradient id="SvgjsLinearGradient1548">
+                                                        <stop id="SvgjsStop1549" stop-opacity="1"
+                                                              stop-color="rgba(235,105,14,1)" offset="0"></stop>
+                                                        <stop id="SvgjsStop1550" stop-opacity="1"
+                                                              stop-color="rgba(252,244,223,1)" offset="1"></stop>
+                                                        <stop id="SvgjsStop1551" stop-opacity="1"
+                                                              stop-color="rgba(252,244,223,1)" offset="1"></stop>
+                                                    </linearGradient>
+                                                    <filter id="SvgjsFilter1554" filterUnits="userSpaceOnUse">
+                                                        <feFlood id="SvgjsFeFlood1555" flood-color="#000000"
+                                                                 flood-opacity="0.15" result="SvgjsFeFlood1555Out"
+                                                                 in="SourceGraphic"></feFlood>
+                                                        <feComposite id="SvgjsFeComposite1556" in="SvgjsFeFlood1555Out"
+                                                                     in2="SourceAlpha" operator="in"
+                                                                     result="SvgjsFeComposite1556Out"></feComposite>
+                                                        <feOffset id="SvgjsFeOffset1557" dx="0" dy="-3"
+                                                                  result="SvgjsFeOffset1557Out"
+                                                                  in="SvgjsFeComposite1556Out"></feOffset>
+                                                        <feGaussianBlur id="SvgjsFeGaussianBlur1558" stdDeviation="4 "
+                                                                        result="SvgjsFeGaussianBlur1558Out"
+                                                                        in="SvgjsFeOffset1557Out"></feGaussianBlur>
+                                                        <feMerge id="SvgjsFeMerge1559" result="SvgjsFeMerge1559Out"
+                                                                 in="SourceGraphic">
+                                                            <feMergeNode id="SvgjsFeMergeNode1560"
+                                                                         in="SvgjsFeGaussianBlur1558Out"></feMergeNode>
+                                                            <feMergeNode id="SvgjsFeMergeNode1561"
+                                                                         in="[object Arguments]"></feMergeNode>
+                                                        </feMerge>
+                                                        <feBlend id="SvgjsFeBlend1562" in="SourceGraphic"
+                                                                 in2="SvgjsFeMerge1559Out" mode="normal"
+                                                                 result="SvgjsFeBlend1562Out"></feBlend>
+                                                    </filter>
+                                                    <filter id="SvgjsFilter1566" filterUnits="userSpaceOnUse">
+                                                        <feFlood id="SvgjsFeFlood1567" flood-color="#000000"
+                                                                 flood-opacity="0.24" result="SvgjsFeFlood1567Out"
+                                                                 in="SourceGraphic"></feFlood>
+                                                        <feComposite id="SvgjsFeComposite1568" in="SvgjsFeFlood1567Out"
+                                                                     in2="SourceAlpha" operator="in"
+                                                                     result="SvgjsFeComposite1568Out"></feComposite>
+                                                        <feOffset id="SvgjsFeOffset1569" dx="0" dy="3"
+                                                                  result="SvgjsFeOffset1569Out"
+                                                                  in="SvgjsFeComposite1568Out"></feOffset>
+                                                        <feGaussianBlur id="SvgjsFeGaussianBlur1570" stdDeviation="4 "
+                                                                        result="SvgjsFeGaussianBlur1570Out"
+                                                                        in="SvgjsFeOffset1569Out"></feGaussianBlur>
+                                                        <feMerge id="SvgjsFeMerge1571" result="SvgjsFeMerge1571Out"
+                                                                 in="SourceGraphic">
+                                                            <feMergeNode id="SvgjsFeMergeNode1572"
+                                                                         in="SvgjsFeGaussianBlur1570Out"></feMergeNode>
+                                                            <feMergeNode id="SvgjsFeMergeNode1573"
+                                                                         in="[object Arguments]"></feMergeNode>
+                                                        </feMerge>
+                                                        <feBlend id="SvgjsFeBlend1574" in="SourceGraphic"
+                                                                 in2="SvgjsFeMerge1571Out" mode="normal"
+                                                                 result="SvgjsFeBlend1574Out"></feBlend>
+                                                    </filter>
+                                                    <linearGradient id="SvgjsLinearGradient1578">
+                                                        <stop id="SvgjsStop1579" stop-opacity="1"
+                                                              stop-color="rgba(235,105,14,1)" offset="0"></stop>
+                                                        <stop id="SvgjsStop1580" stop-opacity="1"
+                                                              stop-color="rgba(0,143,251,1)" offset="1"></stop>
+                                                        <stop id="SvgjsStop1581" stop-opacity="1"
+                                                              stop-color="rgba(0,143,251,1)" offset="1"></stop>
+                                                    </linearGradient>
+                                                </defs>
+                                                <g id="SvgjsG1544" class="apexcharts-radialbar">
+                                                    <g id="SvgjsG1545">
+                                                        <g id="SvgjsG1546" class="apexcharts-tracks">
+                                                            <g id="SvgjsG1547"
+                                                               class="apexcharts-radialbar-track apexcharts-track"
+                                                               rel="1">
+                                                                <path id="apexcharts-radialbarTrack-0"
+                                                                      d="M 71.89846577319413 212.10153422680585 A 91.36036585365854 91.36036585365854 0 1 1 72.01131505709914 212.2141867232341"
+                                                                      fill="none" fill-opacity="1"
+                                                                      stroke="rgba(252,244,223,0.85)" stroke-opacity="1"
+                                                                      stroke-linecap="butt"
+                                                                      stroke-width="13.962621951219514"
+                                                                      stroke-dasharray="0"
+                                                                      class="apexcharts-radialbar-area"
+                                                                      filter="url(#SvgjsFilter1554)"
+                                                                      data:pathOrig="M 71.89846577319413 212.10153422680585 A 91.36036585365854 91.36036585365854 0 1 1 72.01131505709914 212.2141867232341"></path>
+                                                            </g>
+                                                        </g>
+                                                        <g id="SvgjsG1563">
+                                                            <g id="SvgjsG1577"
+                                                               class="apexcharts-series apexcharts-radial-series"
+                                                               seriesName="seriesx1" rel="1" data:realIndex="0">
+                                                                <path id="SvgjsPath1582"
+                                                                      d="M 71.89846577319413 212.10153422680585 A 91.36036585365854 91.36036585365854 0 1 1 226.73556814616467 133.20809004180316"
+                                                                      fill="none" fill-opacity="0.85"
+                                                                      stroke="url(#SvgjsLinearGradient1578)"
+                                                                      stroke-opacity="1" stroke-linecap="butt"
+                                                                      stroke-width="31.028048780487808"
+                                                                      stroke-dasharray="0"
+                                                                      class="apexcharts-radialbar-area apexcharts-radialbar-slice-0"
+                                                                      data:angle="216" data:value="60" index="0" j="0"
+                                                                      data:pathOrig="M 71.89846577319413 212.10153422680585 A 91.36036585365854 91.36036585365854 0 1 1 226.73556814616467 133.20809004180316"></path>
+                                                            </g>
+                                                            <circle id="SvgjsCircle1564" r="84.37905487804878"
+                                                                    cx="136.5" cy="147.5"
+                                                                    class="apexcharts-radialbar-hollow" fill="#ffffff"
+                                                                    filter="url(#SvgjsFilter1566)"></circle>
+                                                            <g id="SvgjsG1575" class="apexcharts-datalabels-group"
+                                                               transform="translate(0, 0)" style="opacity: 1;">
+                                                                <text id="SvgjsText1576"
+                                                                      font-family="Helvetica, Arial, sans-serif"
+                                                                      x="136.5" y="163.5" text-anchor="middle"
+                                                                      dominant-baseline="auto" font-size="20px"
+                                                                      font-weight="regular" fill="#666666"
+                                                                      class="apexcharts-datalabel-value"
+                                                                      style="font-family: Helvetica, Arial, sans-serif;">
+                                                                    {{ withoutMovements }}
+                                                                </text>
+                                                            </g>
+                                                        </g>
+                                                    </g>
+                                                </g>
+                                                <line id="SvgjsLine1583" x1="0" y1="0" x2="273" y2="0" stroke="#b6b6b6"
+                                                      stroke-dasharray="0" stroke-width="1"
+                                                      class="apexcharts-ycrosshairs"></line>
+                                                <line id="SvgjsLine1584" x1="0" y1="0" x2="273" y2="0"
+                                                      stroke-dasharray="0" stroke-width="0"
+                                                      class="apexcharts-ycrosshairs-hidden"></line>
+                                            </g>
+                                        </svg>
+                                        <div class="apexcharts-legend"></div>
+                                    </div>
+                                </div>
+                                <div class="resize-triggers">
+                                    <div class="expand-trigger">
+                                        <div style="width: 617px; height: 383px;"></div>
+                                    </div>
+                                    <div class="contract-trigger"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="Toastify"></div>
+    </div>
+
+{% endblock %}

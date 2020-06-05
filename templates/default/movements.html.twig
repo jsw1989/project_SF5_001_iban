@@ -1,0 +1,129 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Financial Movements{% endblock %}
+
+{% block body %}
+
+    <div id="app">
+        <div class="MuiGrid-root mainContainerArea">
+            {% include('default/sidebar.html.twig') ignore missing %}
+            <div class="MuiGrid-root mainContainer">
+                <div class="MuiGrid-root mainContentRouter">
+                    <ul class="breadCumbWrap">
+                        {%  if linkBack %}
+                            <ul class="breadCumbWrap"><li><a href="{{ path('wallets_index') }}">Wallets</a> </li><li>Transactions</li></ul>							
+                        {%  else %}
+                            <li>Transactions</li>							
+                        {% endif %}
+
+                    </ul>
+                    <div class="MuiGrid-root cartStyle pb-30 tablePedingWrap">
+                        <div class="MuiGrid-root tableResponsive">
+                            <table class="MuiTable-root tableStyle" data-search="true" data-pagination="true" data-show-export="true">
+                                <thead class="MuiTableHead-root">
+                                <tr class="MuiTableRow-root MuiTableRow-head">
+                                    <th class="MuiTableCell-root MuiTableCell-head" scope="col">Movement Id</th>
+                                    <th class="MuiTableCell-root MuiTableCell-head" scope="col">Wallet Name</th>
+                                    <th class="MuiTableCell-root MuiTableCell-head" scope="col">Booking date</th>
+                                    <th class="MuiTableCell-root MuiTableCell-head" scope="col">Value date</th>
+                                    <th class="MuiTableCell-root MuiTableCell-head" scope="col">Amount</th>
+                                    <th class="MuiTableCell-root MuiTableCell-head" scope="col">Description</th>
+                                </tr>
+                                </thead>
+                                <tbody class="MuiTableBody-root">
+                                {% for movement in movements %}
+                                <tr class="MuiTableRow-root">
+                                    <td class="MuiTableCell-root MuiTableCell-body">{{ movement.id}}</td>
+                                    <td class="MuiTableCell-root MuiTableCell-body">{{ movement.walletId }}</td>
+                                    <td class="MuiTableCell-root MuiTableCell-body">{{ movement.bookingDate }}</td>
+                                    <td class="MuiTableCell-root MuiTableCell-body">{{ movement.valueDate }} </td>
+                                    <td class="MuiTableCell-root MuiTableCell-body">{{ movement.amount.value }}  ({{ movement.amount.currency }})</td>
+                                    <td class="MuiTableCell-root MuiTableCell-body">{{ movement.description }}</td>
+                                </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="Toastify"></div>
+    </div>
+    <div role="presentation" class="dropdownWrapper"
+         style="position: fixed; z-index: 1300; right: 0px; bottom: 0px; top: 0px; left: 0px; visibility: hidden;"
+         aria-hidden="true">
+        <div tabindex="0" data-test="sentinelStart"></div>
+        <div class="MuiPaper-root MuiMenu-paper MuiPaper-elevation8 MuiPopover-paper MuiPaper-rounded" role="document"
+             tabindex="-1" style="opacity: 0; transform: scale(0.75, 0.5625); visibility: hidden;">
+            <ul class="MuiList-root MuiMenu-list MuiList-padding" role="menu" tabindex="-1">
+                <li class="notificationList"><h5>Notification<span>Clear all</span></h5>
+                    <div class="scrollarea scrollbarArea">
+                        <div class="scrollarea-content scrollbarContent" tabindex="1"
+                             style="margin-top: 0px; margin-left: 0px;">
+                            <ul class="notificationItems">
+                                <li><a class="MuiButtonBase-root MuiButton-root MuiButton-text" tabindex="0" role="button"
+                                       aria-disabled="false" href="/"><span class="MuiButton-label"><i
+                                                    class="fa fa-bell-o"></i>It is a long<span>It is a long established fact that a reader will be distracted</span></span><span
+                                                class="MuiTouchRipple-root"></span></a></li>
+                                <li><a class="MuiButtonBase-root MuiButton-root MuiButton-text" tabindex="0" role="button"
+                                       aria-disabled="false" href="/"><span class="MuiButton-label"><i
+                                                    class="fa fa-bell-o"></i>will be distracted<span>It is a long established fact that a reader will be distracted</span></span><span
+                                                class="MuiTouchRipple-root"></span></a></li>
+                                <li><a class="MuiButtonBase-root MuiButton-root MuiButton-text" tabindex="0" role="button"
+                                       aria-disabled="false" href="/"><span class="MuiButton-label"><i
+                                                    class="fa fa-bell-o"></i>established fact that<span>It is a long established fact that a reader will be distracted</span></span><span
+                                                class="MuiTouchRipple-root"></span></a></li>
+                                <li><a class="MuiButtonBase-root MuiButton-root MuiButton-text" tabindex="0" role="button"
+                                       aria-disabled="false" href="/"><span class="MuiButton-label"><i
+                                                    class="fa fa-bell-o"></i>reader will be<span>It is a long established fact that a reader will be distracted</span></span><span
+                                                class="MuiTouchRipple-root"></span></a></li>
+                                <li><a class="MuiButtonBase-root MuiButton-root MuiButton-text" tabindex="0" role="button"
+                                       aria-disabled="false" href="/"><span class="MuiButton-label"><i
+                                                    class="fa fa-bell-o"></i>It is a long<span>It is a long established fact that a reader will be distracted</span></span><span
+                                                class="MuiTouchRipple-root"></span></a></li>
+                                <li><a class="MuiButtonBase-root MuiButton-root MuiButton-text" tabindex="0" role="button"
+                                       aria-disabled="false" href="/"><span class="MuiButton-label"><i
+                                                    class="fa fa-bell-o"></i>will be distracted<span>It is a long established fact that a reader will be distracted</span></span><span
+                                                class="MuiTouchRipple-root"></span></a></li>
+                                <li><a class="MuiButtonBase-root MuiButton-root MuiButton-text" tabindex="0" role="button"
+                                       aria-disabled="false" href="/"><span class="MuiButton-label"><i
+                                                    class="fa fa-bell-o"></i>established fact that<span>It is a long established fact that a reader will be distracted</span></span><span
+                                                class="MuiTouchRipple-root"></span></a></li>
+                                <li><a class="MuiButtonBase-root MuiButton-root MuiButton-text" tabindex="0" role="button"
+                                       aria-disabled="false" href="/"><span class="MuiButton-label"><i
+                                                    class="fa fa-bell-o"></i>reader will be<span>It is a long established fact that a reader will be distracted</span></span><span
+                                                class="MuiTouchRipple-root"></span></a></li>
+                                <li><a class="MuiButtonBase-root MuiButton-root MuiButton-text" tabindex="0" role="button"
+                                       aria-disabled="false" href="/"><span class="MuiButton-label"><i
+                                                    class="fa fa-bell-o"></i>It is a long<span>It is a long established fact that a reader will be distracted</span></span><span
+                                                class="MuiTouchRipple-root"></span></a></li>
+                                <li><a class="MuiButtonBase-root MuiButton-root MuiButton-text" tabindex="0" role="button"
+                                       aria-disabled="false" href="/"><span class="MuiButton-label"><i
+                                                    class="fa fa-bell-o"></i>will be distracted<span>It is a long established fact that a reader will be distracted</span></span><span
+                                                class="MuiTouchRipple-root"></span></a></li>
+                                <li><a class="MuiButtonBase-root MuiButton-root MuiButton-text" tabindex="0" role="button"
+                                       aria-disabled="false" href="/"><span class="MuiButton-label"><i
+                                                    class="fa fa-bell-o"></i>established fact that<span>It is a long established fact that a reader will be distracted</span></span><span
+                                                class="MuiTouchRipple-root"></span></a></li>
+                                <li><a class="MuiButtonBase-root MuiButton-root MuiButton-text" tabindex="0" role="button"
+                                       aria-disabled="false" href="/"><span class="MuiButton-label"><i
+                                                    class="fa fa-bell-o"></i>reader will be<span>It is a long established fact that a reader will be distracted</span></span><span
+                                                class="MuiTouchRipple-root"></span></a></li>
+                            </ul>
+                        </div>
+                        <div class="scrollbar-container   vertical">
+                            <div class="scrollbar" style="height: 63.2959px; margin-top: 0px;"></div>
+                        </div>
+                    </div>
+                    <a class="MuiButtonBase-root MuiButton-root seeAll MuiButton-text" tabindex="0" role="button"
+                       aria-disabled="false" href="/"><span class="MuiButton-label">See All</span><span
+                                class="MuiTouchRipple-root"></span></a></li>
+            </ul>
+        </div>
+        <div tabindex="0" data-test="sentinelEnd"></div>
+    </div>
+    <span id="recharts_measurement_span"
+          style="position: absolute; top: -20000px; left: 0px; padding: 0px; margin: 0px; border: none; white-space: pre;">0</span>
+{% endblock %}
