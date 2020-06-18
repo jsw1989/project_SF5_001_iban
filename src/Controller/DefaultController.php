@@ -39,7 +39,7 @@ class DefaultController extends AbstractController
         foreach ($jsonWallets['wallets'] as $wallet) {
             $wcurrency = $wallet['bookingAmount']['currency'];
             // convert all amount to euro
-            $wAmount = ($wcurrency != 'EUR') ? $wallet['bookingAmount']['value'] * $jsonCurrencies['rates'][$wcurrency] : $wallet['bookingAmount']['value'];
+            $wAmount = ($wcurrency != 'EUR') ? $wallet['bookingAmount']['value'] * ($jsonCurrencies['rates'][$wcurrency]??1) : $wallet['bookingAmount']['value'];
             $totalBookingAmount += $wAmount;
         }
         // lauch call for API via APIcaller Service with url of financialMovements
@@ -49,7 +49,7 @@ class DefaultController extends AbstractController
             // store only wallets with financial movements
             $singleWallets[$movement['walletId']] = $movement['walletId'];
             // convert all amount to euro
-            $fAmount = ($movement['amount']['currency'] != 'EUR') ? $movement['amount']['value'] * $jsonCurrencies['rates'][$movement['amount']['currency']] : $movement['amount']['value'];
+            $fAmount = ($movement['amount']['currency'] != 'EUR') ? $movement['amount']['value'] * ($jsonCurrencies['rates'][$movement['amount']['currency']]??1) : $movement['amount']['value'];
             $totalTransactionsAmount += $fAmount;
         }
         $withMovements = count($singleWallets);
