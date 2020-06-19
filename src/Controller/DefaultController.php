@@ -21,8 +21,11 @@ class DefaultController extends AbstractController
      */
     public function __construct(ParameterBagInterface $params)
     {
+        // retreive wallets API url form parameters
         $this->urls['wallets'] = $params->get('API_URL_WALLETS');
+        // retreive movemnets API url form parameters
         $this->urls['movements'] = $params->get('API_URL_MOVEMENTS');
+        // retreive currencies API url form parameters
         $this->urls['currencies'] = $params->get('API_URL_CURRENCIES');
     }
     /**
@@ -53,7 +56,7 @@ class DefaultController extends AbstractController
             $totalTransactionsAmount += $fAmount;
         }
         $withMovements = count($singleWallets);
-
+        // render index view which contains dashboard with analytic data
         return $this->render('default/index.html.twig',
             [
                 'totalWallets' => $totalWallets,
@@ -80,12 +83,14 @@ class DefaultController extends AbstractController
             $singleWallets[$movement['walletId']] = $movement['walletId'];
         }
         $wallets = [];
+        // browse all wallets and add has transactions
         foreach ($jsonWallets['wallets'] as $index => $wallet) {
             $wallets[$index] = $wallet;
             $wallets[$index]['hasTransactions'] = isset($singleWallets[$wallet['id']]) ? true : false;
 
         }
         unset($singleWallets);
+        // render wallets view which contains all wallets
         return $this->render('default/wallets.html.twig', [
             'wallets' => $wallets,
         ]);
