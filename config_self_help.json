@@ -1,0 +1,471 @@
+{
+    "ref": "ezv-panel",
+    "project": null,
+    "lasttouch": "2019-09-13",
+    "createon": "2019-05-10",
+    "image": "picture.jpg",
+    "name": "Default Interface for EasyVista",
+    "bindresize": true,
+    "widthref": null,
+    "heightref": null,
+    "version": 1,
+    "group":"notinit",
+    "avatar": [],
+    "sso": {
+    	"enable": true,
+    	"forcepopup": false,
+    	"forcedurl": null,
+    	"endpage":"{path.root}assets/ssoend.html"
+    },
+    "default": {
+        "muted": false,
+        "cookiesduration": 365,
+        "lang": "en_US",
+        "disablesoundonmobile": true,
+        "composition": "default",
+        "theme": "evsh",
+        "startpublic": "/livedesk/creative/{theme}/startPublic/{sid}.html?allowfeedback=false&allowlog=false&allowpostit=false&allowmap=false&locale={locale}"
+    },
+    "include": [
+        {
+            "type": "JS",
+            "src": "{path.root}js/customcss.js",
+            "support": "iframe"
+        },
+        {
+            "type": "JS",
+            "src": "{path.root}js/lib.js",
+            "support": null
+        },
+        {
+            "type": "CSS",
+            "src": "{path.root}css/iframe.css",
+            "support": "iframe"
+        },
+        {
+            "type": "CSS",
+            "src": "{path.root}css/FontAwesome.min.css",
+            "support": "iframe"
+        },
+        {
+            "type": "CSS",
+            "src": "{path.root}css/widget.css",
+            "support": "widget"
+        }
+    ],
+    "vars": {
+        "credits": "&copy; 2019 EasyVista"
+    },
+    "path": {
+        "root": null,
+        "domain": null,
+        "sound": "",
+        "iframe": ""
+    },
+    "webservice": {
+        "url": null
+    },
+    "local": {
+        "en_US": {
+            "timeout": "Oops, I can't establish a connection with my database. Can you ask your question again? If you are still having trouble, please verify your Internet connnection.",
+            "error": "Oops, I can't establish a connection with my database. Can you ask your question again? If you are still having trouble, please verify your Internet connnection.",
+            "spellcheck_1": "Result for ",
+            "spellcheck_2": "Search instead",
+            "moreresult": "More results",
+            "logingin": "Login",
+            "logingpwd": "Password",
+            "logingsend": "Send",
+            "loginerror": "Wrong login and/or password",
+            "logginor": "or",
+            "ssologinlink": "<i class='fa fa-id-badge'></i> Single sign-on (SSO) login",
+            "classiclogin": "Login / Password",
+            "next": "Next",
+            "submit": "Submit",
+            "ERROR-UNKNOWN": "Unknown error",
+            "ERROR-REQUIRED": "Required field",
+            "ERROR-VALIDATION": "Validation error",
+            "ERROR-TYPE-VALIDATION-NUMBER":"Expected number", 
+            "ERROR-TYPE-VALIDATION-BOOLEAN":"Expected boolean", 
+            "ERROR-TYPE-VALIDATION-DATE":"Expected date", 
+            "ERROR-TYPE-VALIDATION-TIME":"Expected time", 
+            "ERROR-TYPE-VALIDATION-ARRAY":"Expected value(s) belonging to the data set", 
+            "ERROR-TYPE-VALIDATION-FILE":"Error during the file loading"
+
+        },
+        "fr_FR": {
+            "timeout": "Oups, je n'arrive pas à accéder à mes connaissances... Pouvez-vous reposer votre question ? Si le problème persiste, je vous conseille de vérifier votre connexion à Internet !",
+            "error": "Oups, je n'arrive pas à accéder à mes connaissances... Pouvez-vous reposer votre question ? Si le problème persiste, je vous conseille de vérifier votre connexion à Internet !",
+            "spellcheck_1": "Résultats pour ",
+            "spellcheck_2": "Rechercher",
+            "moreresult": "Plus de résultats",
+            "logingin": "Identifiant",
+            "logingpwd": "Mot de passe",
+            "logingsend": "Envoyer",
+            "loginerror": "Identifiant ou mot de passe invalide",
+            "logginor": "ou",
+            "ssologinlink": "<i class='fa fa-id-badge'></i> Connexion via Single sign-on (SSO)",
+            "classiclogin": "Identifiant / Mot de passe",
+            "next": "Suite",
+            "submit": "Envoyer",
+            "ERROR-UNKNOWN": "Erreur inconnue",
+			"ERROR-REQUIRED": "Champ obligatoire",
+			"ERROR-VALIDATION": "Erreur de validation", 
+			"ERROR-TYPE-VALIDATION-NUMBER":"Un nombre est attendu", 
+			"ERROR-TYPE-VALIDATION-BOOLEAN":"Un booléen est attendu", 
+			"ERROR-TYPE-VALIDATION-DATE":"Une date est attendue", 
+			"ERROR-TYPE-VALIDATION-TIME":"Une heure est attendue", 
+			"ERROR-TYPE-VALIDATION-ARRAY":"La/les valeur(s) saisie(s) doivent appartenir à la liste", 
+			"ERROR-TYPE-VALIDATION-FILE":"Erreur lors du chargement du fichier"
+        },
+        "es_ES": {
+            "timeout": "Vaya, no puedo acceder a mi conocimiento ... ¿Puedes hacer tu pregunta? Si el problema persiste, ¡te aconsejo que compruebes tu conexión a Internet!",
+            "error": "Vaya, no puedo acceder a mi conocimiento ... ¿Puedes hacer tu pregunta? Si el problema persiste, ¡te aconsejo que compruebes tu conexión a Internet!",
+            "spellcheck_1": "Resultados para",
+            "spellcheck_2": "Buscar",
+            "moreresult": "Más resultados",
+            "logingin": "Cuenta",
+            "logingpwd": "Contraseña",
+            "logingsend": "Enviar",
+            "loginerror": "Usuario y / o contraseña incorrectos",
+            "logginor": "o,",
+            "ssologinlink": "<i class='fa fa-id-badge'></i> Isniciar sesión via Single sign-on (SSO)",
+            "classiclogin": "Cuenta/Contraseña",
+            "next": "Siguiente",
+            "submit": "Enviar",
+            "ERROR-UNKNOWN": "Error desconocido",
+            "ERROR-REQUIRED": "campo obligatorio",
+            "ERROR-VALIDATION": "Error de validaciõn",
+            "ERROR-TYPE-VALIDATION-NUMBER":"Número esperado", 
+            "ERROR-TYPE-VALIDATION-BOOLEAN":"Boolean esperado", 
+            "ERROR-TYPE-VALIDATION-DATE":"Fecha esperada", 
+            "ERROR-TYPE-VALIDATION-TIME":"Tiempo esperado", 
+            "ERROR-TYPE-VALIDATION-ARRAY":"Valores esperados que pertenecen al conjunto de datos", 
+            "ERROR-TYPE-VALIDATION-FILE":"Error durante la carga del archivo"
+        }
+    },
+    "composition": [
+        {
+            "ref": "widget",
+            "group": null,
+            "support": "widget",
+            "mode": null,
+			"iframe": [
+                {
+                    "ref": "iframe",
+                    "url": "",
+                    "style": "",
+                    "parent": ".la-evie-area"
+                }
+            ],
+            "mobileonly": false,
+            "draggable": false,
+            "avatar": null,
+            "style": "la-interface-widget la-shadow",
+            "parent": "body",
+            "screen_gt": null,
+            "screen_lt": null,
+            "min_height": null,
+            "max_height": null,
+            "flux": null,
+            "textinput": null,
+            "controls": [],
+            "addon": [
+                {
+                    "ref": "la-evie-area",
+                    "style": "la-evie-area la-shadow",
+                    "height": [
+                        100,
+                        "%"
+                    ],
+                    "position": "absolute",
+                    "html": null,
+                    "parent": null
+                },
+                {
+                    "ref": "selfhelp-area",
+                    "style": "selfhelp-area la-shadow",
+                    "height": [
+                        100,
+                        "%"
+                    ],
+                    "position": "absolute",
+                    "html": "<div><div class='la-selfhelp-close'><a href='#' onclick='EVSelfHelp.evCloseSecondPanel();return false;'>&gt;&gt;</a></div><div class='la-selfhelp-holder'></div></div>",
+                    "parent": null
+                }
+            ]
+        },
+        {
+            "ref": "loading",
+            "group": null,
+            "support": "iframe",
+            "mode": null,
+            "mobileonly": false,
+            "draggable": false,
+            "iframe": null,
+            "avatar": null,
+            "style": "la-interface",
+            "parent": "body",
+            "screen_gt": null,
+            "screen_lt": null,
+            "min_height": null,
+            "max_height": null,
+            "controls": [],
+            "addon": [
+                {
+                    "ref": "la-evie-area",
+                    "style": "la-evie-area la-shadow",
+                    "height": [
+                        100,
+                        "%"
+                    ],
+                    "position": "absolute",
+                    "html": null,
+                    "parent": null
+                },
+                {
+                    "ref": "header-area",
+                    "height": [
+                        98,
+                        "px"
+                    ],
+                    "position": "relative",
+                    "style": "header-area",
+                    "html": "<div> <a class='la-header-close' href='#' onclick='EVSelfHelp.evClose();return false;'><i class='fa fa-close  fr-deletable' aria-hidden='true'></i></a> </div>",
+                    "parent": ".la-evie-area"
+                },
+                {
+                    "ref": "la-loading-area",
+                    "height": [
+                        100,
+                        "%"
+                    ],
+                    "position": "relative",
+                    "style": "la-loading-area",
+                    "html": "",
+                    "parent": ".la-evie-area"
+                }
+            ]
+        },
+        {
+            "ref": "login",
+            "group": "notlogged",
+            "support": "iframe",
+            "mode": null,
+            "mobileonly": false,
+            "draggable": false,
+            "iframe": null,
+            "avatar": null,
+            "style": "la-interface",
+            "parent": "body",
+            "screen_gt": null,
+            "screen_lt": null,
+            "min_height": null,
+            "max_height": null,
+            "loginforms": [
+                {
+                	"ref": "la-loggin",
+                    "class": "la-logging-form",
+                    "parent": ".la-logging-area"
+                }
+            ],
+            "addon": [
+                {
+                    "ref": "la-evie-area",
+                    "style": "la-evie-area la-shadow",
+                    "height": [
+                        100,
+                        "%"
+                    ],
+                    "position": "absolute",
+                    "html": null,
+                    "parent": null
+                },
+                {
+                    "ref": "header-area",
+                    "height": [
+                        98,
+                        "px"
+                    ],
+                    "position": "relative",
+                    "style": "header-area",
+                    "html": "<div> <a class='la-header-close' href='#' onclick='EVSelfHelp.evClose();return false;'><i class='fa fa-close  fr-deletable' aria-hidden='true'></i></a> </div>",
+                    "parent": ".la-evie-area"
+                },
+                {
+                    "ref": "la-logging-top",
+                    "height": [
+                        30,
+                        "%"
+                    ],
+                    "position": "relative",
+                    "html": null,
+                    "parent": ".la-evie-area"
+                },
+                {
+                    "ref": "la-logging-area",
+                    "height": [
+                        100,
+                        "%"
+                    ],
+                    "position": "relative",
+                    "style": "la-logging-area",
+                    "html": null,
+                    "parent": ".la-evie-area"
+                },
+                {
+                    "ref": "la-logging-bottom",
+                    "height": [
+                        30,
+                        "%"
+                    ],
+                    "position": "relative",
+                    "html": null,
+                    "parent": ".la-evie-area"
+                }
+            ]
+        },
+        {
+            "ref": "default",
+            "group": "logged",
+            "support": "iframe",
+            "mode": null,
+            "mobileonly": false,
+            "draggable": false,
+            "iframe": null,
+            "avatar": null,
+            "style": "la-interface",
+            "parent": "body",
+            "screen_gt": null,
+            "screen_lt": null,
+            "min_height": null,
+            "max_height": null,
+            "flux": [
+                {
+                    "ref": "flux",
+                    "grouptext": true,
+                    "autoscroll": true,
+                    "direction": "bottom",
+                    "limit": 40,
+                    "content": [
+                        "spellcheck",
+                        "title",
+                        "dialog",
+                        "wb",
+                        "suggestion", 
+                        "satisfaction"
+                    ],
+                    "appenduserinput": true,
+                    "parent": ".dialog-area",
+                    "style": null,
+                    "animated": true
+                }
+            ],
+            "textinput": [
+                {
+                    "ref": "uinput",
+                    "enable": true,
+                    "label": "",
+                    "button": "<i class='fa fa-paper-plane fr-deletable' aria-hidden='true'></i>",
+                    "buttonalt": "Send",
+                    "recall": false,
+                    "parent": ".control-area",
+                    "textarea": true,
+                    "style": "la-userinput"
+                }
+            ],
+            "controls": [
+                {
+                    "actioncode": "show:tags",
+                    "enable": true,
+                    "2states": false,
+                    "labelon": "<i class='fa fa-tags fr-deletable' aria-hidden='true'></i>",
+                    "titleon": "Tags",
+                    "class": "la-btn-tags",
+                    "parent": ".control-area",
+                    "href": null,
+                    "target": null,
+                    "container": "div"
+                },
+                {
+                    "enable": true,
+                    "2states": false,
+                    "labelon": "+",
+                    "titleon": "Size Up",
+                    "class": "la-btn-sizeup",
+                    "parent": ".control-area",
+                    "href": "javascript:EVSelfHelp.evFontsize('up');",
+                    "target": null,
+                    "container": "div"
+                },
+                {
+                    "enable": true,
+                    "2states": false,
+                    "labelon": "-",
+                    "titleon": "Size Down",
+                    "class": "la-btn-sizedown",
+                    "parent": ".control-area",
+                    "href": "javascript:EVSelfHelp.evFontsize('down');",
+                    "target": null,
+                    "container": "div"
+                }
+            ],
+            "addon": [
+                {
+                    "ref": "la-evie-area",
+                    "style": "la-evie-area la-shadow",
+                    "height": [
+                        100,
+                        "%"
+                    ],
+                    "position": "absolute",
+                    "html": null,
+                    "parent": null
+                },
+                {
+                    "ref": "header-area",
+                    "height": [
+                        98,
+                        "px"
+                    ],
+                    "position": "relative",
+                    "style": "header-area",
+                    "html": "<div> <a class='la-header-close' href='#' onclick='EVSelfHelp.evClose();return false;'><i class='fa fa-close  fr-deletable' aria-hidden='true'></i></a> </div>",
+                    "parent": ".la-evie-area"
+                },
+                {
+                    "ref": "dialog-area",
+                    "height": [
+                        100,
+                        "%"
+                    ],
+                    "position": "relative",
+                    "style": "dialog-area",
+                    "html": null,
+                    "parent": ".la-evie-area"
+                },
+                {
+                    "ref": "control-area",
+                    "height": [
+                        98,
+                        "px"
+                    ],
+                    "position": "relative",
+                    "style": "control-area",
+                    "html": "<div> <div class='quicklinks-area' style='display:none'><a href='#' class='ql-toggle' onclick='EVSelfHelp.evToggleQuickLinks();return false;'>^</a><div class='quicklinks'></div></div> </div>",
+                    "parent": ".la-evie-area"
+                },
+                {
+                    "ref": "selfhelp-area",
+                    "style": "selfhelp-area la-shadow",
+                    "height": [
+                        100,
+                        "%"
+                    ],
+                    "position": "absolute",
+                    "html": "<div><div class='la-selfhelp-close'><a href='#' onclick='EVSelfHelp.evCloseSecondPanel();return false;'>&gt;&gt;</a></div><div class='la-selfhelp-holder'></div></div>",
+                    "parent": null
+                }
+            ]
+        }
+    ]
+}
